@@ -1,26 +1,31 @@
 function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
+    let timer = duration;
     
-    const interval = setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+    // Taymerni darrov ishlatib yuborish (1 sekund kutib o'tirmaslik uchun)
+    const updateDisplay = () => {
+        let minutes = Math.floor(timer / 60);
+        let seconds = timer % 60;
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
 
-        // Vaqt 0 ga yetganda
         if (--timer < 0) {
-            // Taymerni to'xtatmaymiz (clearInterval qilmaymiz)
-            // Shunchaki timer qiymatini yana boshlang'ich vaqtga qaytaramiz
-            timer = duration; 
+            timer = duration; // Qayta boshlash
         }
-    }, 1000);
+    };
+
+    updateDisplay(); // Birinchi marta chaqirish
+    setInterval(updateDisplay, 1000);
 }
 
-window.onload = function () {
-    const fiftyNineSeconds = 59; // Necha sekunddan boshlanishi
+document.addEventListener("DOMContentLoaded", function () {
     const display = document.querySelector('.timer__text');
-    startTimer(fiftyNineSeconds, display);
-};
+    
+    if (display) {
+        startTimer(59, display);
+    } else {
+        console.error("Bro, .timer__text topilmadi! HTML-ni tekshir.");
+    }
+});
