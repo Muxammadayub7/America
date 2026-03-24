@@ -1,14 +1,17 @@
 @font-face {
 	font-family: Gilroy;
 	src: url(../fonts/Gilroy/Gilroy-Light.woff2);
+	font-display: swap;
 }
 @font-face {
 	font-family: FindSansProBold;
 	src: url(../fonts/FindSansPro/FindSansPro-Bold\ \(1\).woff2);
+	font-display: swap;
 }
 @font-face {
 	font-family: Inter;
 	src: url(../fonts/Inter/Inter_18pt-SemiBold.woff2);
+	font-display: swap;
 }
 /* --- CONTAINER --- */
 .container {

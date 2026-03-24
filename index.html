@@ -3,16 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>a</title>
-  <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+  <title>Only News</title>
+  <meta name="description" content="Only News landing sahifasi. To'liq responsiv va BEM asosida yozilgan.">
+  <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main.css">
   </noscript>
-  
 </head>
-<body>
+<body class="page">
+  <div class="page__bg"></div>
 
- 
-  
+  <header class="site-header">
+    <div class="site-header__container container">
+      <div class="site-header__meta">
+        <span class="site-header__meta-label">Bugun</span>
+        <strong class="site-header__meta-value">24-Mart</strong>
+      </div>
+
+      <a class="site-header__logo-link" href="/" aria-label="Only News bosh sahifa">
+        <img class="site-header__logo" src="./images/header/logo.svg" alt="Only News logo" width="129" height="39">
+      </a>
+
+      <div class="site-header__meta site-header__meta--right">
+        <span class="site-header__meta-label">Jonli efir</span>
+        <strong class="site-header__meta-value">19:00</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="page__content">
+    <section class="hero">
+      <div class="hero__container container">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Eksklyuziv format</p>
+          <h1 class="hero__title">
+            Faqat
+            <span class="hero__title-accent">dolzarb</span>
+            yangiliklar
+          </h1>
+          <p class="hero__description">
+            Shovqinsiz, ortiqcha bloklarsiz va foydalanuvchiga tushunarli kompozitsiya. Sahifa mobil, planshet va desktop ekranlar uchun qayta moslashadi.
+          </p>
+
+          <div class="hero__actions">
+            <a class="hero__button" href="#digest">
+              <span class="hero__button-text">Bugungi dayjest</span>
+              <span class="hero__button-icon" aria-hidden="true">
+                <img src="./images/hero/submit.svg" alt="" width="22" height="27">
+              </span>
+            </a>
+            <p class="hero__note">BEM bo'yicha bloklarga ajratilgan va qayta ishlatishga tayyor.</p>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="hero__frame">
+            <img class="hero__frame-bg" src="./images/hero/wrapper.avif" alt="" loading="lazy" decoding="async">
+            <img class="hero__frame-card hero__frame-card--left" src="./images/hero/left.avif" alt="Asosiy yangilik kartasi" loading="lazy" decoding="async">
+            <img class="hero__frame-card hero__frame-card--center" src="./images/hero/logo.avif" alt="Only News asosiy kartasi" loading="lazy" decoding="async">
+            <img class="hero__frame-card hero__frame-card--right" src="./images/hero/right.avif" alt="Ikkinchi yangilik kartasi" loading="lazy" decoding="async">
+            <img class="hero__frame-mark" src="./images/hero/undo.avif" alt="" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats__container container">
+        <article class="stats__item">
+          <span class="stats__value">03</span>
+          <p class="stats__label">Yirik yangilik bloki</p>
+        </article>
+        <article class="stats__item">
+          <span class="stats__value">100%</span>
+          <p class="stats__label">Responsiv layout</p>
+        </article>
+        <article class="stats__item">
+          <span class="stats__value">BEM</span>
+          <p class="stats__label">Aniq class naming</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="digest" id="digest">
+      <div class="digest__container container">
+        <div class="digest__intro">
+          <p class="digest__eyebrow">Bugungi tanlov</p>
+          <h2 class="digest__title">Kontent bloklari aniq ustuvorlik bilan joylangan</h2>
+        </div>
+
+        <div class="digest__grid">
+          <article class="news-card news-card--feature">
+            <span class="news-card__tag">Asosiy</span>
+            <h3 class="news-card__title">Top story kartasi katta vizual va kuchli CTA bilan birinchi fold ichida turadi</h3>
+            <p class="news-card__text">Katta sarlavha, qisqa izoh va foydalanuvchini kerakli blokka olib boradigan tugma bir joyga yig'ilgan.</p>
+          </article>
+
+          <article class="news-card">
+            <span class="news-card__tag">Tezkor</span>
+            <h3 class="news-card__title">Yon kartalar stacking orqali kompozitsiyani to'ldiradi</h3>
+            <p class="news-card__text">Kichik ekranlarda ular vertikal tushadi, katta ekranlarda esa hero illustration atrofida joylashadi.</p>
+          </article>
+
+          <article class="news-card">
+            <span class="news-card__tag">Tizim</span>
+            <h3 class="news-card__title">BEM bloklari keyingi sectionlarga bemalol ko'chiriladi</h3>
+            <p class="news-card__text">`news-card`, `stats`, `digest`, `cta-banner` kabi bloklar mustaqil ishlaydi va maintenance osonlashadi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-banner__container container">
+        <div class="cta-banner__content">
+          <p class="cta-banner__eyebrow">Natija</p>
+          <h2 class="cta-banner__title">Sahifa Figma uslubiga yaqin vizual ritm bilan yig'ildi</h2>
+        </div>
+        <a class="cta-banner__button" href="#top">Yuqoriga qaytish</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
