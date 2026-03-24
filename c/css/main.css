@@ -1,0 +1,145 @@
+@font-face {
+	font-family: Gilroy;
+	src: url(../fonts/Gilroy/Gilroy-Light.woff2);
+}
+@font-face {
+	font-family: FindSansProBold;
+	src: url(../fonts/FindSansPro/FindSansPro-Bold\ \(1\).woff2);
+}
+@font-face {
+	font-family: Inter;
+	src: url(../fonts/Inter/Inter_18pt-SemiBold.woff2);
+}
+/* --- CONTAINER --- */
+.container {
+	/* 320px dan 390px gacha */
+	max-width: clamp(320px, 100%, 390px);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* --- HEADER --- */
+.header__container {
+	background-color: #0a4975;
+	/* 300px -> 350px */
+	max-width: clamp(300px, 90vw, 350px);
+	width: 100%;
+	padding: 6px clamp(15px, 5vw, 20px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 10px;
+	height: 44px;
+	margin: 0 auto 17px auto;
+}
+
+.header__text {
+	font-family: GilroyBold, sans-serif;
+	font-weight: 400;
+	/* 12px -> 14px */
+	font-size: clamp(12px, 4vw, 14px);
+	line-height: 115%;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+/* --- HERO --- */
+.hero__container {
+	overflow: hidden;
+	background:
+		linear-gradient(0deg, #ffffff, #ffffff),
+		linear-gradient(180deg, rgba(78, 210, 255, 0) 45.66%, #4ed2ff 100%);
+	padding-bottom: 0;
+}
+
+.hero__title {
+	font-family: FindSansProBold, sans-serif;
+	font-weight: 700;
+	/* 24px -> 28px */
+	font-size: clamp(24px, 7vw, 28px);
+	line-height: 130%;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	color: #000000;
+}
+
+.hero__text {
+	font-family: FindSansProBold, sans-serif;
+	font-weight: 700;
+	/* 16px -> 18px */
+	font-size: clamp(16px, 5vw, 18px);
+	line-height: 100%;
+	color: #ffffff;
+	background-color: #ff2c2c;
+	display: inline-flex;
+	padding: 7px clamp(8px, 3vw, 10px);
+	border-radius: 10px;
+	margin-bottom: 16px;
+}
+
+.hero__bottom__text {
+	font-family: FindSansProBold, sans-serif;
+	font-weight: 700;
+	/* 14px -> 16px */
+	font-size: clamp(14px, 4.5vw, 16px);
+	line-height: 140%;
+	color: #000000;
+	margin-bottom: 12px;
+}
+
+.hero__bottom__flex__text {
+	font-family: Inter, sans-serif;
+	font-weight: 600;
+	/* 14px -> 16px */
+	font-size: clamp(14px, 4.5vw, 16px);
+	line-height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+/* --- BUTTON --- */
+.btn {
+	font-family: FindSansProBold, sans-serif;
+	font-weight: 700;
+	/* 18px -> 21px */
+	font-size: clamp(18px, 6vw, 21px);
+	line-height: 100%;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	gap: 8px;
+	/* 20px -> 30px vertical padding */
+	padding: clamp(20px, 8vw, 30px) 0;
+	/* 300px -> 351px */
+	max-width: clamp(300px, 95vw, 351px);
+	width: 100%;
+	color: white;
+	background: linear-gradient(90deg, #ff2c2c 0%, #ff5b57 100%);
+	border: none;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	transition: transform 0.2s ease;
+}
+
+.btn:active {
+	transform: scale(0.97);
+}
+
+/* --- IMAGE --- */
+.hero__image-wrapper {
+	background-image: url('../images/hero/logo.avif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	/* 300px -> 400px balandlik */
+	height: clamp(300px, 80vw, 400px);
+	width: 100%;
+}

@@ -1,0 +1,116 @@
+@font-face {
+	font-family: 'MontserratRegular';
+	src: url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'MontserratBold';
+	src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Buyan';
+	src: url('../fonts/Buyan/yubuyan-bold.woff') format('woff');
+}
+@font-face {
+	font-family: 'Kuunari';
+	src: url('../fonts/Kuunari/kuunari-black-condensed.woff') format('woff');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* Matnni silliqroq ko'rsatish uchun muhim xususiyatlar */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: #000000;
+	color: white;
+}
+
+.container {
+	max-width: 430px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.header {
+	padding-bottom: 20px;
+	background-color: #000000;
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-start; /* Tepadan tekislash */
+	margin-left: 20px;
+	gap: 15px;
+}
+
+/* Chap va o'ng tarafdagi vaqt/sana bloklari */
+.header__row,
+.header__row__right {
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px; /* Logotip bilan bir qatorga tushishi uchun */
+}
+
+.header__row {
+	align-items: flex-end;
+	text-align: right;
+}
+.header__row__right {
+	align-items: flex-start;
+	text-align: left;
+}
+
+.header__row span,
+.header__row__right span {
+	font-family: 'MontserratRegular';
+	font-size: 10px;
+	color: #d7d7d7;
+	text-transform: none;
+	margin-bottom: 2px;
+}
+
+.row__text {
+	font-family: 'MontserratBold';
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
+}
+
+.logo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #000;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-top: none;
+	border-radius: 0 0 25px 25px;
+
+	padding: 10px 20px;
+	min-width: 160px;
+}
+
+.header__title {
+	font-family: Buyan;
+	font-weight: 700;
+	font-size: 34px;
+	line-height: 120%;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-top: 25px;
+	letter-spacing: 0.5px;
+  max-width: 408px;
+  width: 100%;
+}
+
+.header__title span {
+	color: #ffd600;
+	display: block;
+  font-size: 34px;
+}
