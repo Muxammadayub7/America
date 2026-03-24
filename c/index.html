@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>b</title>
+  <style>
+    .container{max-width:clamp(320px, 100%, 390px);margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}.header__container{background-color:#0a4975;max-width:clamp(300px, 90vw, 350px);width:100%;padding:6px clamp(15px, 5vw, 20px);display:flex;align-items:center;justify-content:space-between;border-radius:10px;height:44px;margin:0 auto 17px auto}.header__text{font-family:GilroyBold,sans-serif;font-weight:400;font-size:clamp(12px, 4vw, 14px);line-height:115%;color:#fff;display:flex;align-items:center;gap:5px}.hero__container{overflow:hidden;background:linear-gradient(0deg,#ffffff,#ffffff),linear-gradient(180deg,#fff0 45.66%,#4ed2ff 100%);padding-bottom:0};.hero__title{font-family:FindSansProBold,sans-serif;font-weight:700;font-size:clamp(24px, 7vw, 28px);line-height:130%;text-transform:uppercase;margin-bottom:5px;color:#000}.hero__text{font-family:FindSansProBold,sans-serif;font-weight:700;font-size:clamp(16px, 5vw, 18px);line-height:100%;color:#fff;background-color:#ff2c2c;display:inline-flex;padding:7px clamp(8px, 3vw, 10px);border-radius:10px;margin-bottom:16px}.hero__bottom__text{font-family:FindSansProBold,sans-serif;font-weight:700;font-size:clamp(14px, 4.5vw, 16px);line-height:140%;color:#000;margin-bottom:12px}.hero__bottom__flex__text{font-family:Inter,sans-serif;font-weight:600;font-size:clamp(14px, 4.5vw, 16px);line-height:100%;display:flex;align-items:center;gap:5px}.btn{font-family:FindSansProBold,sans-serif;font-weight:700;font-size:clamp(18px, 6vw, 21px);line-height:100%;text-transform:uppercase;display:flex;align-items:center;justify-content:center;border-radius:20px;gap:8px;padding:clamp(20px, 8vw, 30px) 0;max-width:clamp(300px, 95vw, 351px);width:100%;color:#fff;background:linear-gradient(90deg,#ff2c2c 0%,#ff5b57 100%);border:none;cursor:pointer;margin-left:auto;margin-right:auto;transition:transform 0.2s ease}.btn:active{transform:scale(.97)}
+  </style>
   <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="./css/main.css" />
@@ -40,12 +43,61 @@
         <p class="hero__bottom__flex__text"><img src="./images/hero/sitcket.svg" alt="img" width="17" height="17"
             loading="lazy" decoding="async4">Erkaklar va ayollar fitnes va trenejor zali</p>
       </div>
-      <button class="btn">Bepul qatnashish <img src="./images/hero/hero__arrow.svg" alt="arrow" width="19" height="13"
+      <button class="btn" id="open">Bepul qatnashish <img src="./images/hero/hero__arrow.svg" alt="arrow" width="19" height="13"
           loading="lazy" decoding="async"></button>
       <div class="hero__image-wrapper">
       </div>
     </div>
   </section>
+
+      <div id="registrationModal" class="homeModal" style="display: none">  
+    <div class="homeModalOverlay"></div>
+    <div class="homeFormContainer">
+      <button class="closeButton" id="closeModalBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="homeFormTop">
+        <h1 class="homeFormTopTitle">
+          Ro'yxatdan o'tish uchun <br> ma'lumotlaringizni kiriting!
+        </h1>
+      </div>
+      <form id="registrationForm" name="contact-form">
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+          <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
+            autocomplete="name" />
+          <p class="homeFormErrorText" id="nameError" style="display: none">❌ Ismingizni kiriting!</p>
+        </div>
+
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+          <div class="phone-input-container">
+            <button type="button" class="selected-country" id="selectedCountry">
+              
+              <span class="selected-code" id="selectedCountryCodeText">+998</span>
+            </button>
+            <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
+            <div class="phone-field" style="flex: 1;">
+              <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone" inputmode="numeric"
+                placeholder="88 888 88 88" autocomplete="tel"
+                style="border: none; background-color: transparent; padding-left: 5px; width: 100%;" />
+            </div>
+          </div>
+          <p class="homeFormErrorText" id="phoneError" style="display:none">❌ Telefon raqam mos emas!</p>
+        </div>
+
+        <button type="submit" class="HomeFormBtn" id="submitBtn">DAVOM ETISH</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="./js/app.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/phoneFormatter.js"></script>
+  <script defer src="./js/thankYou.js"></script>
+
 
 </body>
 

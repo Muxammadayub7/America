@@ -5,7 +5,7 @@
 }
 @font-face {
 	font-family: FindSansProBold;
-	src: url(../fonts/FindSansPro/FindSansPro-Bold\ \(1\).woff2);
+	src: url(../fonts/FindSansPro/FindSansPro-Bold.woff2);
 	font-display: swap;
 }
 @font-face {
@@ -13,9 +13,12 @@
 	src: url(../fonts/Inter/Inter_18pt-SemiBold.woff2);
 	font-display: swap;
 }
-/* --- CONTAINER --- */
+
+.homeModal, .homeModalOverlay {position: fixed;top: 0;height: 100vh;width: 100%;left: 0;}.homeModal {z-index: 9999;justify-content: center;align-items: center;display: flex;}.homeModalOverlay {background-color: rgba(0, 0, 0, 0.3);backdrop-filter: blur(5px);}.homeFormContainer {position: relative;z-index: 9999;background-color: #fff;color: #000;border-radius: 8px;padding: 20px 40px 40px;width: 100%;max-width: 520px;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);margin: 0 20px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);}.homeFormTop {display: flex;justify-content: space-between;}.homeFormTopTitle {font-family: Inter, sans-serif;font-size: clamp(21px, 6.6vw, 24px);margin: 0 0 20px;color: #000;font-weight: 600;text-align: center;margin-left: auto;margin-right: auto;}.closeButton {background: 0 0;border: none;cursor: pointer;padding: 4px;justify-content: center;align-items: center;display: flex;position: absolute;top: 20px;right: 20px;color: #000;}.homeFormErrorText {color: #e53e3e;margin-bottom: 12px;font-size: 14px;font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;padding-top: 5px;padding-bottom: 5px;}.HomeFormRowInput, .HomeFormRowLabel {font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;font-size: 18px;}.HomeFormRow {margin-bottom: 20px;}.HomeFormRowLabel {display: block;margin-bottom: 6px;color: #000;}.HomeFormRowInput {width: 100%;padding: 10px 16px;border: 1px solid #c9c9c9;min-height: 48px;background-color: #f3f7f8;border-radius: 6px;font-weight: 400;outline: 0;height: 50px;transition: border-color 0.2s;}.HomeFormRowInput:focus {border-color: #e71f1f;}.HomeFormRowInput::placeholder {color: #aaa;}.HomeFormBtn {font-family: sans-serif;height: 60px;width: 100%;cursor: pointer;border-radius: 10px;background-color: #e71f1f;transition: 0.3s;font-weight: 700;font-size: 28px;color: white;text-transform: uppercase;border: none;position: relative;display: flex;align-items: center;justify-content: center;}.phone-input-container {display: flex;align-items: center;position: relative;border: 1px solid #c9c9c9;background-color: transparent;border-radius: 6px;}.phone-input-container:focus {border-color: #e71f1f;}.selected-code {display: flex;margin-left: 10px;}.country-selector {position: relative;margin-right: 10px;}.selected-country {display: flex;align-items: center;padding: 10px;padding-right: 0;border-radius: 6px;cursor: pointer;min-height: 50px;font-family: sans-serif !important;font-size: 18px;font-weight: 400 !important;min-width: max-content;border: none;background-color: transparent;}.country-dropdown {position: absolute;top: 110%;left: 0;width: 100%;background-color: #fff;border: 1px solid #c9c9c9;border-radius: 6px;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);z-index: 40;max-height: 200px;overflow-y: auto;font-family: sans-serif !important;font-weight: 400 !important;}.country-option {display: flex;justify-content: space-between;align-items: center;padding: 10px;cursor: pointer;font-family: sans-serif;font-weight: 400 !important;}.country-option:hover {background-color: #f3f7f8;}.country-option.selected {background-color: #e6f0fa;}@media screen and (max-width: 768px) {.homeFormContainer {max-width: 100%;padding: 80px 20px 20px;margin: 0;border-radius: 6px;height: 100vh;}.homeFormTopTitle {text-align: center;max-width: 408px;margin-left: auto;margin-right: auto;font-weight: 700;margin-bottom: 15px;}.homeFormTop {flex-direction: column;align-items: flex-start;}.closeButton {width: 100%;height: 50px;background-color: #000;color: #fff;padding-right: 20px;top: 0;left: 0;justify-content: end;}.homeFormErrorText {font-size: 12px;margin-bottom: 8px;}.HomeFormRowLabel {margin-bottom: 6px;}.HomeFormRowInput {padding: 0 12px;min-height: 40px;background-color: transparent;}.HomeFormRowInput::placeholder {color: #a3a3a3;}.HomeFormBtn {font-size: 18px;font-weight: 700;margin-top: 24px;}}@media screen and (max-width: 480px) {.homeFormContainer {max-width: 100%;padding: 80px 20px 20px;margin: 0;border-radius: 6px;height: 100vh;}.homeFormTopTitle {text-align: center;margin: 0 auto 15px;}.homeFormErrorText {font-size: 12px;margin-bottom: 8px;}.HomeFormRowLabel {margin-bottom: 6px;}.HomeFormRowInput {padding: 0 12px;min-height: 40px;background-color: transparent;border-radius: 10px;}.HomeFormRowInput::placeholder {color: #a3a3a3;}.HomeFormBtn {font-size: 16px;padding: 10px 0;margin-top: 24px;height: 50px;}}
+
+
+/* 
 .container {
-	/* 320px dan 390px gacha */
 	max-width: clamp(320px, 100%, 390px);
 	margin-left: auto;
 	margin-right: auto;
@@ -23,10 +26,8 @@
 	padding-right: 20px;
 }
 
-/* --- HEADER --- */
 .header__container {
 	background-color: #0a4975;
-	/* 300px -> 350px */
 	max-width: clamp(300px, 90vw, 350px);
 	width: 100%;
 	padding: 6px clamp(15px, 5vw, 20px);
@@ -41,7 +42,6 @@
 .header__text {
 	font-family: GilroyBold, sans-serif;
 	font-weight: 400;
-	/* 12px -> 14px */
 	font-size: clamp(12px, 4vw, 14px);
 	line-height: 115%;
 	color: #ffffff;
@@ -50,7 +50,6 @@
 	gap: 5px;
 }
 
-/* --- HERO --- */
 .hero__container {
 	overflow: hidden;
 	background:
@@ -62,7 +61,6 @@
 .hero__title {
 	font-family: FindSansProBold, sans-serif;
 	font-weight: 700;
-	/* 24px -> 28px */
 	font-size: clamp(24px, 7vw, 28px);
 	line-height: 130%;
 	text-transform: uppercase;
@@ -73,7 +71,6 @@
 .hero__text {
 	font-family: FindSansProBold, sans-serif;
 	font-weight: 700;
-	/* 16px -> 18px */
 	font-size: clamp(16px, 5vw, 18px);
 	line-height: 100%;
 	color: #ffffff;
@@ -87,7 +84,6 @@
 .hero__bottom__text {
 	font-family: FindSansProBold, sans-serif;
 	font-weight: 700;
-	/* 14px -> 16px */
 	font-size: clamp(14px, 4.5vw, 16px);
 	line-height: 140%;
 	color: #000000;
@@ -97,7 +93,6 @@
 .hero__bottom__flex__text {
 	font-family: Inter, sans-serif;
 	font-weight: 600;
-	/* 14px -> 16px */
 	font-size: clamp(14px, 4.5vw, 16px);
 	line-height: 100%;
 	display: flex;
@@ -105,11 +100,9 @@
 	gap: 5px;
 }
 
-/* --- BUTTON --- */
 .btn {
 	font-family: FindSansProBold, sans-serif;
 	font-weight: 700;
-	/* 18px -> 21px */
 	font-size: clamp(18px, 6vw, 21px);
 	line-height: 100%;
 	text-transform: uppercase;
@@ -118,9 +111,7 @@
 	justify-content: center;
 	border-radius: 20px;
 	gap: 8px;
-	/* 20px -> 30px vertical padding */
 	padding: clamp(20px, 8vw, 30px) 0;
-	/* 300px -> 351px */
 	max-width: clamp(300px, 95vw, 351px);
 	width: 100%;
 	color: white;
@@ -134,15 +125,44 @@
 
 .btn:active {
 	transform: scale(0.97);
+} */
+
+.hero__image-wrapper {
+  width: 100%;
+  height: clamp(350px, 90vw, 400px); /* Biroq balandroq qildik, yoyilishi chiroyli bo'lishi uchun */
+  position: relative;
+  
+  background-image: 
+    /* 1. Asosiy rasm */
+    url('../images/hero/logo.avif'), 
+    /* 2. Oq rangli fade - tugma atrofini tozalash uchun */
+    linear-gradient(180deg, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      rgba(255, 255, 255, 1) 90% /* Tugma tagida butunlay oq bo'ladi */
+    ),
+    /* 3. Ko'k gradient - tepadan tugma tagigacha yoyiladi */
+    linear-gradient(180deg, 
+      rgba(78, 210, 255, 0) 5%, 
+      rgba(78, 210, 255, 0.5) 45%, 
+      rgba(78, 210, 255, 0.8) 75%, 
+      #4ed2ff 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 15%; /* Binolarni biroz teparoqqa surdik */
+  
+  /* Tugma va matnlar uchun zamin tayyorlaymiz */
+  margin-top: -20px; 
 }
 
-/* --- IMAGE --- */
-.hero__image-wrapper {
-	background-image: url('../images/hero/logo.avif');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	/* 300px -> 400px balandlik */
-	height: clamp(300px, 80vw, 400px);
-	width: 100%;
+/* Agar tugma shu wrapper ichida bo'lsa, uning soyasini ham biroz moslaymiz */
+.inner__btn {
+  /* ... sizdagi qolgan stillar ... */
+  z-index: 10;
+  /* Tugma ostidagi soya gradient bilan urushmasligi uchun biroz shaffofroq */
+  box-shadow: 
+    0px 6px 0px 0px #d61f1f,
+    0px 2px 3px 1px rgba(255, 255, 255, 0.3) inset;
 }

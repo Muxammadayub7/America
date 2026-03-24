@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>a</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{background-color:#000}.container{max-width:430px;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}.header__container{display:flex;flex-direction:column;align-items:start;justify-content:center}.wrapper{display:flex;align-items:center;gap:8px;margin-left:clamp(20px, 4vw, 40px)}.header__row span{font-family:Montserrat;font-weight:400;font-size:10px;line-height:100%;color:#d7d7d7}.row__text{font-family:MontserratBold;font-weight:700;font-size:14px;line-height:100%;text-transform:uppercase}.logo{border:1px solid #fff;border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top:none;padding:0 9px}.header__row__right span{font-family:Montserrat;font-weight:400;font-size:10px;line-height:100%;color:#d7d7d7}.header__row h4{color:#fff}.header__row__right h4{color:#fff}.header__title{margin-top:14px;font-family:Buyan;font-weight:700;font-size:24px;line-height:120%;text-align:center;text-transform:uppercase;color:#fff}.header__title span{color:#ffd600}.hero{margin-left:95px;max-width:390px;width:100%;margin-left:auto;margin-right:auto;overflow:hidden;background:linear-gradient(0deg,rgb(0 0 0 / .8),rgb(0 0 0 / .8)),linear-gradient(180deg,#000000 0%,#fff0 17.33%)}.hero__inner{background-image:url(../images/hero/wrapper.avif);background-repeat:no-repeat;position:relative;height:486px}.right{position:absolute;right:-40px;transform:rotate(-100.42%)}.hero__logo{position:absolute;right:30px;bottom:0}.inner__btn{position:absolute;left:50%;transform:translateX(-50%);bottom:clamp(5px, 2vw, -10px);width:clamp(280px, 90vw, 351px);padding:clamp(18px, 5vw, 30px) 0;font-size:clamp(18px, 5vw, 21px);font-family:'Kuunari',sans-serif;font-weight:700;line-height:100%;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;border-radius:20px;border:none;background:linear-gradient(94.13deg,#ff2c2c 13.8%,#ff5b5b 55.11%,#ff2c2c 83%);box-shadow:0 6px 0 0 #d61f1f,0 2px 3px 1px rgb(255 255 255 / .25) inset;cursor:pointer;z-index:50;transition:all 0.2s ease}.inner__btn:active{transform:translateX(-50%) translateY(4px);box-shadow:0 2px 0 0 #d61f1f}.left{position:absolute;object-fit:cover;left:-60px;top:160px;transform:rotate(-142.51deg)}.wrapper__title{font-family:Buyan;font-weight:700;font-size:32px;line-height:120%;text-align:center;text-transform:uppercase;color:#fff;margin-top:20px;margin-bottom:8px}.wrapper__row{display:flex;align-items:center;gap:15px;margin-bottom:8px}.wrapper__row__title{font-family:BuyanRegular;font-weight:400;font-size:44px;line-height:114.99999999999999%;text-transform:uppercase;color:#fff;position:relative;width:33px}.ticket{position:absolute;bottom:35%;left:-5px}.wrapper__row__text{font-family:Montserrat;font-weight:400;font-size:16px;line-height:150%;color:#fff}.inner__btn__bottom{width:clamp(280px, 90vw, 351px);padding:clamp(18px, 5vw, 30px) 0;font-size:clamp(18px, 5vw, 21px);font-family:'Kuunari',sans-serif;font-weight:700;line-height:100%;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;border-radius:20px;border:none;background:linear-gradient(94.13deg,#ff2c2c 13.8%,#ff5b5b 55.11%,#ff2c2c 83%);box-shadow:0 6px 0 0 #d61f1f,0 2px 3px 1px rgb(255 255 255 / .25) inset;cursor:pointer;z-index:50;transition:all 0.2s ease;margin-top:17px;margin-bottom:40px}
+  </style>
   <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="./css/main.css" />
@@ -40,7 +43,7 @@
         decoding="async">
       <img src="./images/hero/logo.avif" alt="logo" class="hero__logo" width="323" height="396">
       <div class="inner__btns">
-        <button class="inner__btn"><img src="./images/hero/submit.svg" alt="submit" width="21" height="27"
+        <button class="inner__btn" id="open"><img src="./images/hero/submit.svg" alt="submit" width="21" height="27"
             loading="lazy" decoding="async"> Bepul qatnashish</button>
       </div>
       <img src="./images/hero/left.avif" alt="leftImg" class="left" width="135" height="83" loading="lazy"
@@ -72,10 +75,58 @@
           <p class="wrapper__row__text"><b>Erkaklar va ayollar <b>fitnes va trenejor zali</b> </p>
         </div>
       </div>
-      <button class="inner__btn__bottom"><img src="./images/hero/submit.svg" alt="submit" width="21" height="27" loading="lazy"
+      <button class="inner__btn__bottom" id="open"><img src="./images/hero/submit.svg" alt="submit" width="21" height="27" loading="lazy"
           decoding="async"> Bepul qatnashish</button>
     </div>
   </section>
+
+    <div id="registrationModal" class="homeModal" style="display: none">  
+    <div class="homeModalOverlay"></div>
+    <div class="homeFormContainer">
+      <button class="closeButton" id="closeModalBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="homeFormTop">
+        <h1 class="homeFormTopTitle">
+          Ro'yxatdan o'tish uchun <br> ma'lumotlaringizni kiriting!
+        </h1>
+      </div>
+      <form id="registrationForm" name="contact-form">
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+          <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
+            autocomplete="name" />
+          <p class="homeFormErrorText" id="nameError" style="display: none">❌ Ismingizni kiriting!</p>
+        </div>
+
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+          <div class="phone-input-container">
+            <button type="button" class="selected-country" id="selectedCountry">
+              
+              <span class="selected-code" id="selectedCountryCodeText">+998</span>
+            </button>
+            <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
+            <div class="phone-field" style="flex: 1;">
+              <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone" inputmode="numeric"
+                placeholder="88 888 88 88" autocomplete="tel"
+                style="border: none; background-color: transparent; padding-left: 5px; width: 100%;" />
+            </div>
+          </div>
+          <p class="homeFormErrorText" id="phoneError" style="display:none">❌ Telefon raqam mos emas!</p>
+        </div>
+
+        <button type="submit" class="HomeFormBtn" id="submitBtn">DAVOM ETISH</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="./js/app.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/phoneFormatter.js"></script>
+  <script defer src="./js/thankYou.js"></script>
 
 </body>
 

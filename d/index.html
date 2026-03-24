@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>d</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{background-color:#FEFDF9}.container{max-width:clamp(320px, 100%, 390px);margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}.header{background-color:#fefdf9}.header__container{border-bottom-left-radius:30px;border-bottom-right-radius:30px;border:1px solid #c2c2c2;max-width:clamp(240px, 70vw, 260px);width:100%;margin:0 auto}.text__date{padding-top:10px;font-family:MontserratBold,sans-serif;font-weight:700;font-size:clamp(16px, 5vw, 18px);line-height:100%;text-align:center;text-transform:uppercase;color:#fff0;background:linear-gradient(90deg,#e4686d 0%,#b02a30 100%);-webkit-background-clip:text;background-clip:text;margin-bottom:4px}.header__text{font-family:MontserratRegular,sans-serif;font-weight:400;font-size:clamp(12px, 4vw, 14px);line-height:115%;text-align:center;padding-bottom:8px}.hero{padding-top:8px}.hero__container{overflow:hidden;max-width:390px;width:100%;display:flex;flex-direction:column;align-items:center}.hero__title{font-family:MontserratExtraBold,sans-serif;font-weight:800;font-size:clamp(20px, 6vw, 24px);line-height:125%;text-align:center;text-transform:uppercase;color:#000;margin-bottom:13px}.hero__title b{color:#c82e2e}.hero__row{max-width:clamp(290px, 85vw, 314px);width:100%;border:1px solid #c2c2c2;display:flex;align-items:center;gap:6px;padding:7px;border-radius:10px;margin-bottom:8px;margin-left:auto;margin-right:auto}.row__text{font-family:MontserratRegular,sans-serif;font-weight:400;font-size:clamp(13px, 3.8vw, 14px);line-height:130%}.btn{display:flex;align-items:center;justify-content:center;max-width:clamp(280px, 92vw, 352px);width:100%;margin:8px auto 19px auto;padding:clamp(20px, 6.5vw, 26px) 26px;background-color:#c5392c;color:#fff;border:none;border-radius:100px;font-family:'MontserratBold',sans-serif;font-weight:700;font-size:clamp(19px, 5.5vw, 22px);line-height:120%;text-align:center;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 0 0 #8a1e14,0 4px 15px 0 rgb(176 42 48 / .4);transition:all 0.1s ease}.btn:active{transform:translateY(3px);box-shadow:0 3px 0 0 #8a1e14,0 2px 10px 0 rgb(176 42 48 / .4)}.timer__text{font-family:MontserratBold,sans-serif;font-weight:600;font-size:clamp(28px, 8.5vw, 32px);line-height:100%;text-align:center;font-variant-numeric:tabular-nums}
+  </style>
   <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="./css/main.css" />
   </noscript>
 
 </head>
+
 <body>
 
   <header class="header">
@@ -19,12 +24,12 @@
     </div>
   </header>
 
-  <section class="hero">  
+  <section class="hero">
     <div class="hero__container container">
       <h2 class="hero__title">Samarqandda endi <br> <b>katejlar va “дом”lar </b> bitta loyihada</h2>
       <div class="hero__row">
         <img src="./images/hero/1.avif" alt="img" width="46" height="36" loading="lazy" decoding="async">
-        <p class="row__text">Farzandizgiz ta‘limi uchun <br> <b>maktab</b>  va <b>bog‘cha</b> </p>
+        <p class="row__text">Farzandizgiz ta‘limi uchun <br> <b>maktab</b> va <b>bog‘cha</b> </p>
       </div>
       <div class="hero__row">
         <img src="./images/hero/2.avif" alt="img" width="46" height="36" loading="lazy" decoding="async">
@@ -38,7 +43,7 @@
         <img src="./images/hero/4.avif" alt="img" width="46" height="36" loading="lazy" decoding="async">
         <p class="row__text"><b>Zamonaviy kutubxona </b>(IT bilan integratsiya qilingan)</p>
       </div>
-      <button class="btn">bepul qatnashish</button>
+      <button class="btn" id="open">bepul qatnashish</button>
       <div class="timer">
         <p class="timer__text">00:59</p>
       </div>
@@ -49,7 +54,54 @@
     </div>
   </section>
 
+  <div id="registrationModal" class="homeModal" style="display: none">
+    <div class="homeModalOverlay"></div>
+    <div class="homeFormContainer">
+      <button class="closeButton" id="closeModalBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="homeFormTop">
+        <h1 class="homeFormTopTitle">
+          Ro'yxatdan o'tish uchun <br> ma'lumotlaringizni kiriting!
+        </h1>
+      </div>
+      <form id="registrationForm" name="contact-form">
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+          <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
+            autocomplete="name" />
+          <p class="homeFormErrorText" id="nameError" style="display: none">❌ Ismingizni kiriting!</p>
+        </div>
+
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+          <div class="phone-input-container">
+            <button type="button" class="selected-country" id="selectedCountry">
+
+              <span class="selected-code" id="selectedCountryCodeText">+998</span>
+            </button>
+            <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
+            <div class="phone-field" style="flex: 1;">
+              <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone" inputmode="numeric"
+                placeholder="88 888 88 88" autocomplete="tel"
+                style="border: none; background-color: transparent; padding-left: 5px; width: 100%;" />
+            </div>
+          </div>
+          <p class="homeFormErrorText" id="phoneError" style="display:none">❌ Telefon raqam mos emas!</p>
+        </div>
+
+        <button type="submit" class="HomeFormBtn" id="submitBtn">DAVOM ETISH</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="./js/app.js"></script>
   <script defer src="./js/main.js"></script>
-  
+  <script defer src="./js/phoneFormatter.js"></script>
+  <script defer src="./js/thankYou.js"></script>
+
 </body>
+
 </html>
